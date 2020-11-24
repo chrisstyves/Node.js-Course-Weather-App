@@ -6,6 +6,8 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+// required by heroku, as the port they use may vary. use 3000 locally.
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 
@@ -101,8 +103,8 @@ app.get('*', (req, res) => {
 })
 
 // start the server
-app.listen(3000, () => {
-    console.log('Web server up and running on port 3000.')
+app.listen(port, () => {
+    console.log('Web server up and running on port ' + port + '.')
 })
 
 //console.log(path.join(__dirname, '../public'))

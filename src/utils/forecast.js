@@ -18,7 +18,8 @@ const forecast = (longitude, latitude, callback) => {
         else {
             callback(undefined, 'It is ' + body.current.weather_descriptions[0] + '.' + 
                 ' It is ' + body.current.temperature + ' degrees F.' + 
-                ' It feels like ' + body.current.feelslike + ' degrees F.')
+                ' It feels like ' + body.current.feelslike + ' degrees F.' + 
+                ' Humidity is ' + body.current.humidity + ' percent.')
         }
     })
 }
